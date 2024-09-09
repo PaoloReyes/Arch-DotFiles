@@ -1,8 +1,8 @@
 # My Dot Files
 
-![Rice](images/1.jpg)
+![Rice](images/1.png)
 
-![Wallpaper](images/2.jpg)
+![Wallpaper](images/2.png)
 
-![Wlogout](images/3.jpg)
+![Wlogout](images/3.png)
 
