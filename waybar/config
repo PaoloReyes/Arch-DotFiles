@@ -1,0 +1,151 @@
+{
+    "layer": "top",
+    "modules-left": ["custom/arch", "hyprland/workspaces", "cpu", "memory", "disk"],
+    "modules-center": ["idle_inhibitor", "clock", "custom/power_profile", "custom/updates"],
+    "modules-right": ["backlight", "pulseaudio#microphone", "pulseaudio", "bluetooth", "custom/network", "hyprland/language", "battery"],
+
+    "custom/arch": {
+      "format": "  ",
+      "tooltip": false,
+      "on-click": "$HOME/.config/waybar/scripts/wlogout"
+    },
+
+    "hyprland/workspaces": {
+      "format": "{name}",
+      "format": "{icon}",
+      "tooltip": false,
+      "all-outputs": true,
+      "format-icons": {
+        "active": "",
+        "default": ""
+      }
+    },
+
+    "cpu": {
+        "interval": 2,
+        "max-length": 10,
+        "format": "<span color='#b4befe'> </span>{usage}%",
+        "on-click": "$HOME/.config/waybar/scripts/btop"
+    },
+
+    "memory": {
+        "interval": 2,
+        "format": "<span color='#b4befe'> </span>{used:0.1f}GiB",
+        "on-click": "$HOME/.config/waybar/scripts/btop"
+    },
+
+    "disk": {
+        "interval": 2,
+        "path": "/",
+        "unit": "GiB",
+        "format": "<span color='#b4befe'> </span>{specific_used:0.1f}GiB",
+        "on-click": "$HOME/.config/waybar/scripts/btop"
+    },
+
+    "idle_inhibitor": {
+        "format": "<span color='#b4befe'>{icon}</span>",
+        "format-icons": {
+            "activated": "󰛐",
+            "deactivated": "󰛑"
+        },
+        "tooltip": true
+    },
+
+    "clock": {
+      "interval": 1,
+      "format": "<span color='#b4befe'> </span>{:%H:%M:%S}",
+      "tooltip-format": "󰃭 {:%A, %e %B %Y}"
+    },
+
+    "custom/updates": {
+        "format": "<span color='#b4befe'>{}</span>",
+        "exec": "~/.config/waybar/scripts/update-sys",
+        "on-click": "$HOME/.config/waybar/scripts/update-sys update",
+        "interval": 300,
+        "tooltip": true
+    },
+
+    "custom/power_profile": {
+        "exec": "$HOME/.config/waybar/scripts/power-profile",
+        "return-type": "json",
+        "interval": 1,
+        "format": "<span color='#b4befe'>{}</span>",
+        "on-click": "$HOME/.config/waybar/scripts/power-profile next",
+        "signal": 8,
+    },
+
+    "backlight": {
+      "device": "intel_backlight",
+      "format": "<span color='#b4befe'>{icon}</span> {percent}%",
+      "format-icons": ["", "", "", "", "", "", "", "", ""],
+      "on-scroll-up": "$HOME/.config/waybar/scripts/brightness --inc",
+      "on-scroll-down": "$HOME/.config/waybar/scripts/brightness --dec",
+      "tooltip": false,
+    },
+
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": "<span color='#b4befe' font='15'></span>",
+        "format-source-muted": "<span color='#b4befe' font='15'></span>",
+        "on-click": "$HOME/.config/waybar/scripts/volume --toggle-mic",
+        "on-click-right": "pavucontrol",
+        "scroll-step": 5,
+        "tooltip": false
+    },
+
+    "pulseaudio": {
+      "format": "<span color='#b4befe' font='14'>{icon}</span> {volume}%",
+        "format-muted": "<span color='#b4befe' font='14'></span>",
+        "on-click": "$HOME/.config/waybar/scripts/volume --toggle",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "$HOME/.config/waybar/scripts/volume --inc",
+        "on-scroll-down": "$HOME/.config/waybar/scripts/volume --dec",
+        "scroll-step": 5,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "tooltip": false
+    },
+
+    "bluetooth": {
+      "format": "<span color='#b4befe'></span> {status}",
+      "format-disabled": "", // an empty format will hide the module
+      "format-connected": "<span color='#b4befe'></span> {num_connections}",
+      "tooltip-format": "{device_enumerate}",
+      "tooltip-format-enumerate-connected": "{device_alias}   {device_address}",
+      "on-click": "blueman-manager",
+    },
+
+    "custom/network": {
+      "return-type": "json",
+      "exec": "$HOME/.config/waybar/scripts/dynamic_network_status",
+      "interval": 2,
+      "format": "<span color='#b4befe'>{icon}</span> {}",
+      "format-icons": { // These are FontAwesome 4 icons. Update them as needed.
+        "ethernet": "󰈀",
+        "wifi": "",
+        "disconnected": "󰤮",
+      },
+      "on-click": "nm-connection-editor",
+    },
+
+    "battery": {
+      "format": "<span color='#b4befe'>{icon}</span> {capacity}%",
+      "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "format-charging": "<span color='#b4befe'></span> {capacity}%",
+      "tooltip": false,
+      "interval": 1,
+    },
+
+    "hyprland/language": {
+        "interval": 30,
+        "format": "<span color='#b4befe'></span> {}",
+        "signal": 8
+    }
+}

@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# Define your interfaces
+ETH_INTERFACE="eno2"
+WIFI_INTERFACE="wlo1"
+
+ETH_KEY="ethernet"   
+WIFI_KEY="wifi"      
+DISCONNECTED_KEY="disconnected"
+
+# Function to get the primary IPv4 address
+get_ipv4() {
+    ip addr show "$1" | grep inet | awk '{print $2}' | cut -d/ -f1 | head -n 1
+}
+
+# Function to get the SSID of a Wi-Fi network
+get_ssid() {
+    iw dev "$1" link | grep SSID | awk '{print $2}'
+}
+
+# Initialize variables
+IP_ADDR=""
+SSID=""
+KEY=""
+CONTENT=""
+
+# Check if Ethernet is up
+if ip link show "$ETH_INTERFACE" | grep -q "state UP"; then
+    IP_ADDR=$(get_ipv4 "$ETH_INTERFACE")
+    KEY="$ETH_KEY"
+    CONTENT="$IP_ADDR"
+# Check if Wi-Fi is connected
+elif ip link show "$WIFI_INTERFACE" | grep -q "state UP"; then
+    SSID=$(get_ssid "$WIFI_INTERFACE")
+    IP_ADDR=$(get_ipv4 "$WIFI_INTERFACE")
+    KEY="$WIFI_KEY"
+    CONTENT="$SSID"
+else
+    KEY="$DISCONNECTED_KEY"
+    CONTENT="Disconnected"
+fi
+
+# Output JSON
+echo "{\"alt\": \"$KEY\", \"text\": \"$CONTENT\", \"tooltip\": \"IPv4: $IP_ADDR\"}"
