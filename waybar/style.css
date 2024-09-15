@@ -1,9 +1,9 @@
 * {
   border: none;
   font-family: 'Fira Code', 'Symbols Nerd Font Mono';
-  font-size: 16px;
+  font-size: 13px;
   font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
-  min-height: 28px;
+  min-height: 22px;
 }
 
 window#waybar {
@@ -15,21 +15,24 @@ window#waybar {
   background-color: #11111b;
   color: #b4befe;
   margin-top: 5px;
-  margin-right: 5px;
+  margin-right: 3px;
   padding-top: 1px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 #custom-arch {
-  font-size: 20px;
-  margin-left: 15px;
+  font-size: 16px;
+  margin-left: 12px;
   color: #b4befe;
 }
 
 #workspaces button {
   background: #11111b;
   color: #b4befe;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
 }
 
 #idle_inhibitor, #clock, #backlight, #pulseaudio, #bluetooth, #custom-network, #battery, #cpu, #memory, #disk, #custom-updates, #custom-power_profile, #language, #custom-gpu, #custom-gpu_mem{
@@ -37,13 +40,13 @@ window#waybar {
   background-color: #11111b;
   color: #cdd6f4;
   margin-top: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-right: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-right: 3px;
 }
 
 #battery {
-  margin-right: 15px;
+  margin-right: 12px;
 }
 
 #cpu, #backlight, #bluetooth {
@@ -51,12 +54,14 @@ window#waybar {
   border-bottom-right-radius: 0;
   padding-right: 5px;
   margin-right: 0;
+  padding-left: 10px;
 }
 
 #disk, #pulseaudio, #custom-network {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   padding-left: 5px;
+  padding-right: 10px;
 }
 
 #memory, #pulseaudio.microphone, #custom-gpu, #custom-gpu_mem {
@@ -71,14 +76,21 @@ window#waybar {
   margin-right: -6px;
 }
 
-#cpu, #disk, #memory, #clock, #backlight, #idle_inhibitor, #custom-updates, #custom-gpu, #custom-gpu_mem {
+#cpu, #disk, #memory, #backlight, #idle_inhibitor, #custom-updates, #custom-gpu, #custom-gpu_mem {
   padding-top: 1px;
 }
 
-#clock {
-  margin-right: 5px;
+#clock, #idle_inhibitor, #custom-updates, #custom-power_profile {
+  margin-right: 3px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
-#idle_inhibitor{
-  margin-right: 5px;
+#clock {
+  padding-top: 2px;
+}
+
+#language, #battery {
+  padding-left: 10px;
+  padding-right: 10px;
 }

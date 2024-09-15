@@ -103,8 +103,8 @@
 
     "pulseaudio#microphone": {
         "format": "{format_source}",
-        "format-source": "<span color='#b4befe' font='15'></span>",
-        "format-source-muted": "<span color='#b4befe' font='15'></span>",
+        "format-source": "<span color='#b4befe' font='12'></span>",
+        "format-source-muted": "<span color='#b4befe' font='12'></span>",
         "on-click": "$HOME/.config/waybar/scripts/volume --toggle-mic",
         "on-click-right": "pavucontrol",
         "scroll-step": 5,
@@ -112,8 +112,8 @@
     },
 
     "pulseaudio": {
-      "format": "<span color='#b4befe' font='14'>{icon}</span> {volume}%",
-        "format-muted": "<span color='#b4befe' font='14'></span>",
+      "format": "<span color='#b4befe' font='11'>{icon}</span> {volume}%",
+        "format-muted": "<span color='#b4befe' font='11'></span>",
         "on-click": "$HOME/.config/waybar/scripts/volume --toggle",
         "on-click-right": "pavucontrol",
         "on-scroll-up": "$HOME/.config/waybar/scripts/volume --inc",
