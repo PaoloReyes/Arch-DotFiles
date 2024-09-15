@@ -1,0 +1,6 @@
+#!/bin/bash
+
+mib=$(nvidia-smi | grep -o 'W |.*MiB /' | grep -o '[0-9]*')
+gib=$(echo "scale=2; $mib/1024" | bc)
+
+echo $gib

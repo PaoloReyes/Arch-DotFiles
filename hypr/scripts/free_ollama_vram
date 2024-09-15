@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo kill -SIGUSR1 $(pgrep -f ollama)

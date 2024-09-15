@@ -32,7 +32,7 @@ window#waybar {
   color: #b4befe;
 }
 
-#idle_inhibitor, #clock, #backlight, #pulseaudio, #bluetooth, #custom-network, #battery, #cpu, #memory, #disk, #custom-updates, #custom-power_profile, #language{
+#idle_inhibitor, #clock, #backlight, #pulseaudio, #bluetooth, #custom-network, #battery, #cpu, #memory, #disk, #custom-updates, #custom-power_profile, #language, #custom-gpu, #custom-gpu_mem{
   border-radius: 10px;
   background-color: #11111b;
   color: #cdd6f4;
@@ -59,7 +59,7 @@ window#waybar {
   padding-left: 5px;
 }
 
-#memory, #pulseaudio.microphone {
+#memory, #pulseaudio.microphone, #custom-gpu, #custom-gpu_mem {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   border-top-right-radius: 0;
@@ -71,7 +71,7 @@ window#waybar {
   margin-right: -6px;
 }
 
-#cpu, #disk, #memory, #clock, #backlight, #idle_inhibitor, #custom-updates {
+#cpu, #disk, #memory, #clock, #backlight, #idle_inhibitor, #custom-updates, #custom-gpu, #custom-gpu_mem {
   padding-top: 1px;
 }
 

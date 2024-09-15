@@ -1,0 +1,3 @@
+#!/bin/bash
+
+nvidia-smi | grep -o 'MiB |.*D' | grep -o '[0-9]*%'
