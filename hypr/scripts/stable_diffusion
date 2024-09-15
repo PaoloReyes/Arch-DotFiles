@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Find the process using port 7860
+PID=$(lsof -t -i:7860)
+
+# Check if a process is found
+if [ -z "$PID" ]; then
+  echo "No process is running on port 7860."
+  echo "Killing Ollama if loaded"
+  $HOME/.config/hypr/scripts/free_ollama_vram
+  echo "Launching Stable Diffusion on port 7860"
+  /opt/stable-diffusion-webui/webui.sh
+else
+  echo "Killing process $PID running on port 7860..."
+  kill -9 $PID
+fi
