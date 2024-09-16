@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if nvidia-smi | grep -q 'ollama_llama_server'; then
+  echo "󰳆"
+fi

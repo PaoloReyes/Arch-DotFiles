@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "modules-left": ["custom/arch", "hyprland/workspaces", "cpu", "custom/gpu", "memory", "custom/gpu_mem", "disk"],
-    "modules-center": ["idle_inhibitor", "clock", "custom/power_profile", "custom/updates"],
+    "modules-center": ["custom/ollama", "custom/stable_diffusion", "idle_inhibitor", "clock", "custom/power_profile", "custom/updates"],
     "modules-right": ["backlight", "pulseaudio#microphone", "pulseaudio", "bluetooth", "custom/network", "hyprland/language", "battery"],
 
     "custom/arch": {
@@ -54,6 +54,20 @@
         "unit": "GiB",
         "format": "<span color='#b4befe'> </span>{specific_used:0.1f}GiB",
         "on-click": "$HOME/.config/waybar/scripts/btop"
+    },
+
+    "custom/ollama": {
+	"interval": 1,
+        "exec": "$HOME/.config/waybar/scripts/ollama",
+        "format": "<span color='#b4befe'>{}</span>",
+	"tooltip": false
+    },
+
+    "custom/stable_diffusion": {
+	"interval": 1,
+        "exec": "$HOME/.config/waybar/scripts/stable_diffusion",
+        "format": "<span color='#b4befe'>{}</span>",
+	"tooltip": false
     },
 
     "idle_inhibitor": {

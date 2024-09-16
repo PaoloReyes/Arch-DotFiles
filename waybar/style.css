@@ -35,7 +35,7 @@ window#waybar {
   padding-top: 2px;
 }
 
-#idle_inhibitor, #clock, #backlight, #pulseaudio, #bluetooth, #custom-network, #battery, #cpu, #memory, #disk, #custom-updates, #custom-power_profile, #language, #custom-gpu, #custom-gpu_mem{
+#idle_inhibitor, #clock, #backlight, #pulseaudio, #bluetooth, #custom-network, #battery, #cpu, #memory, #disk, #custom-updates, #custom-power_profile, #language, #custom-gpu, #custom-gpu_mem, #custom-ollama, #custom-stable_diffusion{
   border-radius: 10px;
   background-color: #11111b;
   color: #cdd6f4;
@@ -80,7 +80,7 @@ window#waybar {
   padding-top: 1px;
 }
 
-#clock, #idle_inhibitor, #custom-updates, #custom-power_profile {
+#clock, #idle_inhibitor, #custom-updates, #custom-power_profile, #custom-ollama, #custom-stable_diffusion{
   margin-right: 3px;
   padding-left: 8px;
   padding-right: 8px;
