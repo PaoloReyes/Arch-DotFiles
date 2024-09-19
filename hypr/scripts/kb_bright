@@ -6,7 +6,7 @@ KB_STATE=$(cat "$STATE_FILE")
 
 if [ "$1" = "next" ]; then
     if [ "$KB_STATE" -ne 3 ]; then  
-		KB_STATE=$((KB_STATE + 1))  
+	KB_STATE=$((KB_STATE + 1))  
         asusctl --next-kbd-bright  
     fi
 elif [ "$1" = "prev" ]; then
