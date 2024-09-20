@@ -31,7 +31,7 @@
     "custom/gpu": {
 	"interval": 2,
 	"exec": "$HOME/.config/waybar/scripts/gpu",
-	"format": "<span color='#b4befe'>󰾲 </span>{}",
+	"format": "<span color='#b4befe'>󰾲 </span>{0}",
 	"on-click": "$HOME/.config/waybar/scripts/btop"
     },
 
@@ -44,7 +44,7 @@
     "custom/gpu_mem": {
 	"interval": 2,
 	"exec": "$HOME/.config/waybar/scripts/gpu_mem",
-        "format": "<span color='#b4befe'>󰾲 </span>{}GiB",
+        "format": "<span color='#b4befe'>󰾲 </span>{0}GiB",
         "on-click": "$HOME/.config/waybar/scripts/btop"
     },
 
@@ -59,14 +59,14 @@
     "custom/ollama": {
 	"interval": 1,
         "exec": "$HOME/.config/waybar/scripts/ollama",
-        "format": "<span color='#b4befe'>{}</span>",
+        "format": "<span color='#b4befe'>{0}</span>",
 	"tooltip": false
     },
 
     "custom/stable_diffusion": {
 	"interval": 1,
         "exec": "$HOME/.config/waybar/scripts/stable_diffusion",
-        "format": "<span color='#b4befe'>{}</span>",
+        "format": "<span color='#b4befe'>{0}</span>",
 	"tooltip": false
     },
 
@@ -89,7 +89,7 @@
 	"return-type": "json",
         "exec": "$HOME/.config/waybar/scripts/update-sys",
       	"interval": 300,
-      	"format": "<span color='#b4befe'>{icon}</span> {}",
+      	"format": "<span color='#b4befe'>{icon}</span> {0}",
       	"format-icons": {
         	"symbol": " ",
       	},
@@ -101,7 +101,7 @@
         "exec": "$HOME/.config/waybar/scripts/power-profile",
         "return-type": "json",
         "interval": 1,
-        "format": "<span color='#b4befe'>{}</span>",
+        "format": "<span color='#b4befe'>{0}</span>",
         "on-click": "$HOME/.config/waybar/scripts/power-profile next",
         "signal": 8,
     },
@@ -158,7 +158,7 @@
       "return-type": "json",
       "exec": "$HOME/.config/waybar/scripts/dynamic_network_status",
       "interval": 2,
-      "format": "<span color='#b4befe'>{icon}</span> {}",
+      "format": "<span color='#b4befe'>{icon}</span> {0}",
       "format-icons": {
         "ethernet": "󰈀",
         "wifi": "",
@@ -177,7 +177,7 @@
 
     "hyprland/language": {
         "interval": 30,
-        "format": "<span color='#b4befe'></span> {}",
+        "format": "<span color='#b4befe'></span> {0}",
         "signal": 8
     }
 }
