@@ -1,5 +1,5 @@
 #!/bin/bash
 
-if nvidia-smi | grep -q 'ollama_llama_server'; then
+if nvidia-smi | grep 'ollama' > /dev/null 2>&1; then
   echo "󰳆"
 fi
